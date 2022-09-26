@@ -1,0 +1,17 @@
+{
+  "name": "lalaina/user-management",
+  "autoload": {
+    "psr-4": {
+      "Lalaina\\UserManagement\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Andry Lalaina",
+      "email": "lalaina@wylog.com"
+    }
+  ],
+  "require": {
+    "php-amqplib/php-amqplib": ">=3.0"
+  }
+}

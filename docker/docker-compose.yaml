@@ -1,0 +1,31 @@
+version: "3.3"
+
+services:
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: "rabbitmq"
+    ports:
+      - 5672:5672
+      - 15672:15672
+
+  userManagement:
+    build:
+      context: ../
+      dockerfile: ./user-management/Dockerfile
+    image: lalaina_rabbitmq/user_management
+    restart: always
+    volumes:
+      - ../user-management:/var/www
+    ports:
+      - 8001:80
+
+  community:
+    build:
+      context: ../
+      dockerfile: ./community/Dockerfile
+    image: lalaina_rabbitmq/community
+    restart: always
+    volumes:
+      - ../community:/var/www
+    ports:
+      - 8002:80
